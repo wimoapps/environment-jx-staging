@@ -10,6 +10,9 @@ dependencies:
 - name: orders
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.4
+- name: users
+  repository: http://jenkins-x-chartmuseum:8080
+  version: 0.0.1
 - name: wimo-api
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.36
