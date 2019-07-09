@@ -7,6 +7,9 @@ dependencies:
   name: exposecontroller
   repository: http://chartmuseum.jenkins-x.io
   version: 2.3.89
+- name: orders
+  repository: http://jenkins-x-chartmuseum:8080
+  version: 0.0.4
 - name: wimo-api
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.36
