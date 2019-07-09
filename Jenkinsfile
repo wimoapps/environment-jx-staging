@@ -3,7 +3,7 @@ pipeline {
     disableConcurrentBuilds()
   }
   agent {
-    label "jenkins-maven"
+    label "jenkins-maven-java11"
   }
   environment {
     DEPLOY_NAMESPACE = "staging"
