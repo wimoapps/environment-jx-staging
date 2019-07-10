@@ -120,7 +120,7 @@ orders:
     FETCHR_HOST: https://xapi.stag.fetchr.us
     NODE_ENV: production
     OLD_DB_DATABASE: wimo
-    OLD_DB_HOST: pg-stg.wimo.ae
+    OLD_DB_HOST: postgres-postgresql.postgres
     OLD_DB_PORT: "5432"
     OLD_DB_USER: wimo
     PORT: "3333"
@@ -134,7 +134,7 @@ orders:
     WIMO_MYSQL_USER: wimo
   ingress:
     enabled: true
-  existingSecret: staging
+  existingSecret: orders-staging
 wimo-courier:
   env:
     API_HOST: https://be-stg.k8.wimo.ae/
