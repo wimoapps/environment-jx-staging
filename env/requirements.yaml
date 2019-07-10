@@ -10,6 +10,14 @@ dependencies:
   name: exposecontroller
   repository: http://chartmuseum.jenkins-x.io
   version: 2.3.89
+- alias: redis
+  name: redis
+  repository: https://charts.bitnami.com/bitnami
+  version: 6.4.2
+- alias: redis-ie
+  name: redis
+  repository: https://charts.bitnami.com/bitnami
+  version: 6.4.2
 - name: orders
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.4

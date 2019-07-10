@@ -20,3 +20,118 @@ jenkins:
   Servers:
     Global: {}
 prow: {}
+
+redis:
+  usePassword: false
+redis-ie:
+  usePassword: false
+ship:
+  env:
+    API_HOST: https://be-dev.k8.wimo.ae
+    ORDERS_SERVICE: https://orders-dev.k8.wimo.ae
+    WS_HOST: be-dev.k8.wimo.ae
+  image:
+    pullPolicy: IfNotPresent
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/backend-protocol: HTTP
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    domain: ship-dev.k8.wimo.ae
+    enabled: true
+  service:
+    annotations:
+      fabric8.io/expose: "false"
+    externalPort: 8080
+    internalPort: 80
+    type: ClusterIP
+wimo-api:
+  env:
+    FE_URL: https://fe-dev.k8.wimo.ae
+    MYSQL_HOST: mysql.mysql
+    MYSQL_NAME: wimo
+    MYSQL_USERNAME: wimo
+    NODE_ENV: production
+    POSTMEN_HOST: https://sandbox-api.postmen.com/v3
+    REDIS_HOST: staging-redis-master
+    REDIS_PORT: "6379"
+    REDIS_SESSION_HOST: staging-redis-ie-master
+    REDIS_SESSION_PORT: "6379"
+    REDIS_STORAGE_HOST: staging-redis-ie-master
+    REDIS_STORAGE_PORT: "6379"
+    S3_BUCKET: wimo-app-data-dev
+    S3_BUCKET_SHIP: wimo-ship-dev
+    S3_BUCKET_TEMP: wimo-label-dev
+    SERVER_HOST: localhost
+    SERVER_PORT: "9090"
+    SMS_COUNTRY_KEY: wimo
+  image:
+    pullPolicy: IfNotPresent
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/backend-protocol: HTTP
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    domain: be-dev.k8.wimo.ae
+    enabled: true
+  service:
+    annotations:
+      fabric8.io/expose: "false"
+    externalPort: 80
+    internalPort: 3000
+    type: ClusterIP
+wimo-www:
+  env:
+    APISERVER: https://be-dev.k8.wimo.ae/
+    APISERVERSTREAMING: be-dev.k8.wimo.ae
+    FE_URL: localhost
+    MODE: production
+    REDIS_STORAGE_HOST: redis-ie
+    SERVERPATH: localhost
+    environment: dev
+  image:
+    pullPolicy: IfNotPresent
+  ingress:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+      nginx.ingress.kubernetes.io/backend-protocol: HTTP
+      nginx.ingress.kubernetes.io/force-ssl-redirect: "true"
+    domain: fe-dev.k8.wimo.ae
+    enabled: true
+  service:
+    annotations:
+      fabric8.io/expose: "false"
+    externalPort: 80
+    internalPort: 80
+    type: ClusterIP
+orders:
+  env:
+    AFTERSHIP_API_HOST: https://api.aftership.com/v4
+    AWS_DEFAULT_REGION: ap-southeast-1
+    CONNECTION_API_URL: https://connections-stg.k8.wimo.ae
+    DB_CONNECTION: mongodb
+    DB_DATABASE: orders
+    DB_HOST: ds255754.mlab.com
+    DB_PORT: "55754"
+    DB_USER: wimoadmin
+    ENV_SILENT: true
+    EPG_BOOKING_SOAP_ACTION: http://epg.generic.booking
+    EPG_HOST: https://osbtest.epg.gov.ae
+    FETCHR_HOST: https://xapi.stag.fetchr.us
+    NODE_ENV: production
+    OLD_DB_DATABASE: wimo
+    OLD_DB_HOST: pg-stg.wimo.ae
+    OLD_DB_PORT: "5432"
+    OLD_DB_USER: wimo
+    PORT: "3333"
+    POSTMEN_HOST: https://sandbox-api.postmen.com/v3
+    S3_BUCKET: wimo-orders-stg
+    USER_SERVICE_URL: https://users-stg.wimo.ae
+    WIMO_API_URL: https://be-stg.k8.wimo.ae:3001
+    WIMO_MYSQL_DBNAME: wimo
+    WIMO_MYSQL_HOST: db-stg.wimo.ae
+    WIMO_MYSQL_PORT: "3306"
+    WIMO_MYSQL_USER: wimo
+  ingress:
+    enabled: true
+  existingSecret: staging
