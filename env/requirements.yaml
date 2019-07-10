@@ -32,7 +32,7 @@ dependencies:
   version: 0.0.36
 - name: wimo-courier
   repository: http://jenkins-x-chartmuseum:8080
-  version: 0.0.2
+  version: 0.0.3
 - name: wimo-www
   repository: http://jenkins-x-chartmuseum:8080
   version: 0.0.17
