@@ -173,3 +173,4 @@ connections:
     POSTMEN_HOST: https://sandbox-api.postmen.com/v3
     USER_SERVICE_URL: https://users-stg.k8.wimo.ae
     WIMO_API_URL: https://be-stg.k8.wimo.ae
+  existingSecret: connections-staging
