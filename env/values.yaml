@@ -161,7 +161,7 @@ connections:
   env:
     API2CART_URL: https://api.api2cart.com/v1.1
     AWS_DEFAULT_REGION: ap-southeast-1
-    CALLBACK_BASE_URL: https://orders-stg.wimo.ae
+    CALLBACK_BASE_URL: https://orders-stg.k8.wimo.ae
     DB_DATABASE: connections
     DB_HOST: postgres-postgresql.postgres
     DB_PORT: "5432"
