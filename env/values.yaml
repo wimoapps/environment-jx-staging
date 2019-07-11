@@ -157,3 +157,19 @@ users:
     TOKEN_EXPIRE: "86400000"
     WIMO_API_URL: https://be-stg.wimo.ae:3001
   existingSecret: users-staging
+connections:
+  env:
+    API2CART_URL: https://api.api2cart.com/v1.1
+    AWS_DEFAULT_REGION: ap-southeast-1
+    CALLBACK_BASE_URL: https://orders-stg.wimo.ae
+    DB_DATABASE: connections
+    DB_HOST: pg-stg.wimo.ae
+    DB_PORT: "5432"
+    DB_USER: wimo
+    ENV_SILENT: true
+    HOST: "0.0.0.0"
+    NODE_ENV: production
+    PORT: "3333"
+    POSTMEN_HOST: https://sandbox-api.postmen.com/v3
+    USER_SERVICE_URL: https://users-stg.k8.wimo.ae
+    WIMO_API_URL: https://be-stg.k8.wimo.ae
