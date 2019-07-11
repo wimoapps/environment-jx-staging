@@ -163,7 +163,7 @@ connections:
     AWS_DEFAULT_REGION: ap-southeast-1
     CALLBACK_BASE_URL: https://orders-stg.wimo.ae
     DB_DATABASE: connections
-    DB_HOST: pg-stg.wimo.ae
+    DB_HOST: postgres-postgresql.postgres
     DB_PORT: "5432"
     DB_USER: wimo
     ENV_SILENT: true
